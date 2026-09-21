@@ -1,0 +1,1863 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>PRISMA — Design & Comunicação Visual</title>
+
+
+  <!-- Fonte -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <style>
+
+    /* ==================================================
+       VARIÁVEIS
+    ================================================== */
+
+    :root {
+
+      --bg-dark: #0a0710;
+
+      --bg-card: #130d21;
+
+      --bg-card-hover: #181027;
+
+      --purple-primary: #2e1065;
+
+      --purple-bright: #2e1065;
+
+      --purple-soft: #2e1065;
+
+      --purple-dark: #2e1065;
+
+      --purple-glow: rgba(139, 92, 246, 0.16);
+
+      --text-main: #f5f3f7;
+
+      --text-muted: #9b96a5;
+
+      --border-color: rgba(139, 92, 246, 0.20);
+
+      --border-light: rgba(255, 255, 255, 0.07);
+
+    }
+
+
+    /* ==================================================
+       RESET
+    ================================================== */
+
+    * {
+
+      margin: 0;
+
+      padding: 0;
+
+      box-sizing: border-box;
+
+    }
+
+
+    html {
+
+      scroll-behavior: smooth;
+
+    }
+
+
+    body {
+
+      font-family:
+        'Plus Jakarta Sans',
+        sans-serif;
+
+      background-color:
+        var(--bg-dark);
+
+      color:
+        var(--text-main);
+
+      line-height: 1.6;
+
+      overflow-x: hidden;
+
+    }
+
+
+    /* ==================================================
+       FUNDO
+    ================================================== */
+
+    .glow-bg {
+
+      position: fixed;
+
+      top: -300px;
+
+      left: 50%;
+
+      transform: translateX(-50%);
+
+      width: 750px;
+
+      height: 750px;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(139, 92, 246, 0.10) 0%,
+          rgba(10, 7, 16, 0) 70%
+        );
+
+      z-index: -1;
+
+      pointer-events: none;
+
+    }
+
+
+    /* ==================================================
+       HEADER
+    ================================================== */
+
+    header {
+
+      position: sticky;
+
+      top: 0;
+
+      background:
+        rgba(12, 9, 19, 0.9);
+
+      backdrop-filter: blur(14px);
+
+      border-bottom:
+        1px solid var(--border-color);
+
+      z-index: 1000;
+
+    }
+
+
+    nav {
+
+      max-width: 1200px;
+
+      margin: 0 auto;
+
+      padding:
+        0.7rem 2rem;
+
+      display: flex;
+
+      justify-content:
+        space-between;
+
+      align-items: center;
+
+    }
+
+
+    /* ==================================================
+       LOGO
+    ================================================== */
+
+    .brand-logo {
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      width: 140px;
+
+      height: 70px;
+
+      overflow: hidden;
+
+      text-decoration: none;
+
+    }
+
+
+    .brand-logo img {
+
+      width: 100%;
+
+      height: 100%;
+
+      object-fit: contain;
+
+      display: block;
+
+      transition:
+        transform 0.3s ease;
+
+    }
+
+
+    .brand-logo:hover img {
+
+      transform:
+        scale(1.04);
+
+    }
+
+
+    /* ==================================================
+       NAVEGAÇÃO
+    ================================================== */
+
+    .nav-links {
+
+      display: flex;
+
+      gap: 2.2rem;
+
+      list-style: none;
+
+    }
+
+
+    .nav-links a {
+
+      color:
+        var(--text-muted);
+
+      text-decoration: none;
+
+      font-weight: 600;
+
+      font-size: 0.9rem;
+
+      transition:
+        color 0.3s ease;
+
+    }
+
+
+    .nav-links a:hover {
+
+      color:
+        var(--purple-soft);
+
+    }
+
+
+    /* ==================================================
+       HERO
+    ================================================== */
+
+    .hero {
+
+      max-width: 1200px;
+
+      margin: 0 auto;
+
+      padding:
+        8rem 2rem 7rem;
+
+      text-align: left;
+
+    }
+
+
+    .hero-content {
+
+      max-width: 900px;
+
+    }
+
+
+    .hero-tag {
+
+      display: inline-block;
+
+      padding:
+        0.4rem 1rem;
+
+      background:
+        rgba(139, 92, 246, 0.08);
+
+      border:
+        1px solid var(--border-color);
+
+      border-radius: 50px;
+
+      color:
+        var(--purple-soft);
+
+      font-size: 0.75rem;
+
+      font-weight: 700;
+
+      letter-spacing: 1.5px;
+
+      margin-bottom: 1.8rem;
+
+      text-transform: uppercase;
+
+    }
+
+
+    .hero h1 {
+
+      font-size:
+        clamp(3rem, 7vw, 6rem);
+
+      font-weight: 800;
+
+      line-height: 0.98;
+
+      letter-spacing: -4px;
+
+      max-width: 900px;
+
+      margin-bottom: 2rem;
+
+    }
+
+
+    .hero h1 span {
+
+      color:
+        var(--purple-primary);
+
+    }
+
+
+    .hero p {
+
+      max-width: 650px;
+
+      color:
+        var(--text-muted);
+
+      font-size: 1.1rem;
+
+      line-height: 1.8;
+
+      margin-bottom: 2.5rem;
+
+    }
+
+
+    /* ==================================================
+       BOTÃO
+    ================================================== */
+
+    .btn {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      padding:
+        0.95rem 1.8rem;
+
+      border-radius: 8px;
+
+      font-weight: 700;
+
+      text-decoration: none;
+
+      transition:
+        all 0.3s ease;
+
+      cursor: pointer;
+
+    }
+
+
+    .btn-primary {
+
+      background:
+        var(--purple-primary);
+
+      color: #fff;
+
+      box-shadow:
+        0 8px 30px
+        rgba(139, 92, 246, 0.18);
+
+    }
+
+
+    .btn-primary:hover {
+
+      background:
+        var(--purple-bright);
+
+      transform:
+        translateY(-2px);
+
+      box-shadow:
+        0 10px 35px
+        rgba(168, 85, 247, 0.28);
+
+    }
+
+
+    /* ==================================================
+       SEÇÕES
+    ================================================== */
+
+    section {
+
+      max-width: 1200px;
+
+      margin: 0 auto;
+
+      padding:
+        5rem 2rem;
+
+    }
+
+
+    .section-header {
+
+      display: flex;
+
+      justify-content:
+        space-between;
+
+      align-items:
+        flex-end;
+
+      gap: 2rem;
+
+      margin-bottom: 3rem;
+
+    }
+
+
+    .section-title {
+
+      font-size: 2rem;
+
+      font-weight: 800;
+
+      margin-bottom: 0;
+
+      position: relative;
+
+      display: inline-block;
+
+    }
+
+
+    .section-title::after {
+
+      content: '';
+
+      position: absolute;
+
+      bottom: -10px;
+
+      left: 0;
+
+      width: 45px;
+
+      height: 3px;
+
+      background:
+        var(--purple-primary);
+
+      border-radius: 2px;
+
+    }
+
+
+    .section-description {
+
+      max-width: 430px;
+
+      color:
+        var(--text-muted);
+
+      font-size: 0.9rem;
+
+      line-height: 1.7;
+
+    }
+
+
+    /* ==================================================
+       GRID
+    ================================================== */
+
+    .grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(
+          auto-fit,
+          minmax(280px, 1fr)
+        );
+
+      gap: 1.5rem;
+
+    }
+
+
+    /* ==================================================
+       CARDS
+    ================================================== */
+
+    .card {
+
+      background:
+        var(--bg-card);
+
+      border:
+        1px solid var(--border-light);
+
+      border-radius: 14px;
+
+      padding: 2.3rem;
+
+      transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+
+      position: relative;
+
+      overflow: hidden;
+
+    }
+
+
+    .card:hover {
+
+      transform:
+        translateY(-5px);
+
+      background:
+        var(--bg-card-hover);
+
+      border-color:
+        var(--border-color);
+
+    }
+
+
+    .card-number {
+
+      color:
+        var(--purple-primary);
+
+      font-size: 0.75rem;
+
+      font-weight: 800;
+
+      letter-spacing: 2px;
+
+      margin-bottom: 2.5rem;
+
+    }
+
+
+    .card h3 {
+
+      font-size: 1.3rem;
+
+      margin-bottom: 1rem;
+
+      font-weight: 700;
+
+    }
+
+
+    .card p {
+
+      color:
+        var(--text-muted);
+
+      font-size: 0.92rem;
+
+      line-height: 1.75;
+
+    }
+
+
+    /* ==================================================
+       SERVIÇOS
+    ================================================== */
+
+    .service-card {
+
+      min-height: 270px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content:
+        space-between;
+
+    }
+
+
+    .service-top {
+
+      display: flex;
+
+      justify-content:
+        space-between;
+
+      align-items:
+        flex-start;
+
+    }
+
+
+    .service-icon {
+
+      width: 45px;
+
+      height: 45px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      border:
+        1px solid var(--border-color);
+
+      border-radius: 10px;
+
+      color:
+        var(--purple-soft);
+
+      font-size: 1.1rem;
+
+      background:
+        rgba(139, 92, 246, 0.05);
+
+    }
+
+
+    .service-arrow {
+
+      color:
+        #5f596b;
+
+      font-size: 1.2rem;
+
+      transition:
+        transform 0.3s ease;
+
+    }
+
+
+    .service-card:hover
+    .service-arrow {
+
+      transform:
+        translate(4px, -4px);
+
+      color:
+        var(--purple-soft);
+
+    }
+
+
+    /* ==================================================
+       SHOWCASE
+    ================================================== */
+
+    .showcase {
+
+      background:
+        linear-gradient(
+          135deg,
+          #120b1d,
+          #0e0915
+        );
+
+      border:
+        1px solid var(--border-color);
+
+      border-radius: 20px;
+
+      padding: 4rem;
+
+      margin-top: 3rem;
+
+      position: relative;
+
+      overflow: hidden;
+
+    }
+
+
+    .showcase-content {
+
+      display: grid;
+
+      grid-template-columns:
+        0.85fr 1.15fr;
+
+      gap: 4rem;
+
+      align-items: center;
+
+    }
+
+
+    .showcase-text h2 {
+
+      font-size: 2.4rem;
+
+      line-height: 1.15;
+
+      margin-bottom: 1.5rem;
+
+    }
+
+
+    .showcase-text p {
+
+      color:
+        var(--text-muted);
+
+      margin-bottom: 1.2rem;
+
+      line-height: 1.8;
+
+    }
+
+
+    /* ==================================================
+       IMAGEM GRANDE DA PRISMA
+    ================================================== */
+
+    .visual-box {
+
+      width: 100%;
+
+      height: 460px;
+
+      background:
+        #10091a;
+
+      border:
+        1px solid var(--border-color);
+
+      border-radius: 16px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      position: relative;
+
+      overflow: hidden;
+
+      padding: 1.2rem;
+
+    }
+
+
+    .visual-box img {
+
+      width: 100%;
+
+      height: 100%;
+
+      object-fit: contain;
+
+      display: block;
+
+      border-radius: 10px;
+
+      transition:
+        transform 0.4s ease;
+
+    }
+
+
+    .visual-box:hover img {
+
+      transform:
+        scale(1.025);
+
+    }
+
+
+    /* ==================================================
+       CTA FINAL
+    ================================================== */
+
+    .final-cta {
+
+      text-align: center;
+
+      padding-top: 7rem;
+
+      padding-bottom: 7rem;
+
+    }
+
+
+    .final-cta h2 {
+
+      font-size:
+        clamp(2rem, 5vw, 3.5rem);
+
+      letter-spacing: -2px;
+
+      margin-bottom: 1rem;
+
+    }
+
+
+    .final-cta p {
+
+      max-width: 550px;
+
+      margin:
+        0 auto 2rem;
+
+      color:
+        var(--text-muted);
+
+      line-height: 1.8;
+
+    }
+
+
+    /* ==================================================
+       FOOTER
+    ================================================== */
+
+    footer {
+
+      border-top:
+        1px solid var(--border-color);
+
+      padding:
+        3.5rem 2rem 2rem;
+
+      background:
+        #050308;
+
+    }
+
+
+    .footer-container {
+
+      max-width: 1200px;
+
+      margin: 0 auto;
+
+      display: flex;
+
+      justify-content:
+        space-between;
+
+      align-items: center;
+
+      flex-wrap: wrap;
+
+      gap: 2rem;
+
+      margin-bottom: 3rem;
+
+    }
+
+
+    .footer-info {
+
+      color:
+        var(--text-muted);
+
+      font-size: 0.85rem;
+
+      max-width: 300px;
+
+      margin-top: 0.5rem;
+
+      line-height: 1.7;
+
+    }
+
+
+    .footer-links {
+
+      display: flex;
+
+      gap: 1.5rem;
+
+      list-style: none;
+
+    }
+
+
+    .footer-links a {
+
+      color:
+        var(--text-muted);
+
+      text-decoration: none;
+
+      font-size: 0.85rem;
+
+      transition:
+        color 0.3s ease;
+
+    }
+
+
+    .footer-links a:hover {
+
+      color:
+        var(--purple-soft);
+
+    }
+
+
+    .footer-copy {
+
+      text-align: center;
+
+      color:
+        #5f596b;
+
+      font-size: 0.75rem;
+
+      padding-top: 2rem;
+
+      border-top:
+        1px solid
+        rgba(255, 255, 255, 0.05);
+
+      max-width: 1200px;
+
+      margin: 0 auto;
+
+    }
+
+
+    /* ==================================================
+       TABLET
+    ================================================== */
+
+    @media (max-width: 768px) {
+
+      .nav-links {
+
+        display: none;
+
+      }
+
+
+      .hero {
+
+        padding-top: 5rem;
+
+      }
+
+
+      .hero h1 {
+
+        font-size: 3.3rem;
+
+        letter-spacing: -2.5px;
+
+      }
+
+
+      .section-header {
+
+        flex-direction: column;
+
+        align-items:
+          flex-start;
+
+      }
+
+
+      .showcase {
+
+        padding: 2rem;
+
+      }
+
+
+      .showcase-content {
+
+        grid-template-columns: 1fr;
+
+        gap: 2.5rem;
+
+      }
+
+
+      .visual-box {
+
+        height: 400px;
+
+      }
+
+
+      .footer-container {
+
+        align-items:
+          flex-start;
+
+        flex-direction: column;
+
+      }
+
+
+      .footer-links {
+
+        flex-wrap: wrap;
+
+      }
+
+    }
+
+
+    /* ==================================================
+       CELULAR
+    ================================================== */
+
+    @media (max-width: 480px) {
+
+      nav {
+
+        padding:
+          0.5rem 1.2rem;
+
+      }
+
+
+      .brand-logo {
+
+        width: 110px;
+
+        height: 60px;
+
+      }
+
+
+      .hero {
+
+        padding-left: 1.2rem;
+
+        padding-right: 1.2rem;
+
+      }
+
+
+      .hero h1 {
+
+        font-size: 2.8rem;
+
+        letter-spacing: -2px;
+
+      }
+
+
+      section {
+
+        padding-left: 1.2rem;
+
+        padding-right: 1.2rem;
+
+      }
+
+
+      .card {
+
+        padding: 1.8rem;
+
+      }
+
+
+      .showcase {
+
+        border-radius: 14px;
+
+        padding: 1.2rem;
+
+      }
+
+
+      .visual-box {
+
+        height: 300px;
+
+        padding: 0.6rem;
+
+      }
+
+
+      .final-cta {
+
+        padding-top: 5rem;
+
+        padding-bottom: 5rem;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- ==================================================
+       FUNDO
+  ================================================== -->
+
+  <div class="glow-bg"></div>
+
+
+
+  <!-- ==================================================
+       HEADER
+  ================================================== -->
+
+  <header>
+
+    <nav>
+
+
+      <!-- LOGO PRISMA -->
+
+      <a
+        href="#"
+        class="brand-logo"
+      >
+
+        <img
+          src="https://i.postimg.cc/SnskDbxX/T2fly-logo-T2fly-logo-1-removebg-preview.png"
+          alt="Logo PRISMA"
+        >
+
+      </a>
+
+
+
+      <!-- MENU -->
+
+      <ul class="nav-links">
+
+        <li>
+          <a href="#sobre">
+            Sobre
+          </a>
+        </li>
+
+        <li>
+          <a href="#servicos">
+            Serviços
+          </a>
+        </li>
+
+        <li>
+          <a href="#manifesto">
+            Manifesto
+          </a>
+        </li>
+
+        <li>
+          <a href="#contato">
+            Contato
+          </a>
+        </li>
+
+      </ul>
+
+    </nav>
+
+  </header>
+
+
+
+  <!-- ==================================================
+       CONTEÚDO PRINCIPAL
+  ================================================== -->
+
+  <main>
+
+
+    <!-- ==================================================
+         HERO
+    ================================================== -->
+
+    <section class="hero">
+
+      <div class="hero-content">
+
+
+        <span class="hero-tag">
+
+          Design • Estratégia • Comunicação
+
+        </span>
+
+
+
+        <h1>
+
+          Ideias que ganham
+          <span>forma.</span>
+
+        </h1>
+
+
+
+        <p>
+
+          A PRISMA transforma conceitos em identidades
+          visuais, experiências digitais e sistemas de
+          comunicação que aproximam marcas das pessoas.
+
+        </p>
+
+
+
+        <a
+          href="#servicos"
+          class="btn btn-primary"
+        >
+
+          Conheça nosso trabalho
+
+        </a>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         SOBRE
+    ================================================== -->
+
+    <section id="sobre">
+
+
+      <div class="section-header">
+
+
+        <h2 class="section-title">
+
+          O que fazemos
+
+        </h2>
+
+
+
+        <p class="section-description">
+
+          Criamos soluções visuais pensadas para comunicar,
+          posicionar e tornar marcas reconhecíveis em um
+          cenário cada vez mais competitivo.
+
+        </p>
+
+
+      </div>
+
+
+
+      <div class="grid">
+
+
+        <!-- CARD 01 -->
+
+        <div class="card">
+
+          <div class="card-number">
+
+            01 / ESTRATÉGIA
+
+          </div>
+
+
+          <h3>
+
+            Pensamento antes da estética
+
+          </h3>
+
+
+          <p>
+
+            Antes de criar, entendemos o problema.
+            Investigamos objetivos, público e
+            posicionamento para transformar ideias
+            em uma direção visual consistente.
+
+          </p>
+
+        </div>
+
+
+
+        <!-- CARD 02 -->
+
+        <div class="card">
+
+          <div class="card-number">
+
+            02 / IDENTIDADE
+
+          </div>
+
+
+          <h3>
+
+            Marcas com personalidade
+
+          </h3>
+
+
+          <p>
+
+            Desenvolvemos identidades que vão além de
+            um logotipo. Criamos sistemas visuais capazes
+            de manter a marca reconhecível em diferentes
+            contextos.
+
+          </p>
+
+        </div>
+
+
+
+        <!-- CARD 03 -->
+
+        <div class="card">
+
+          <div class="card-number">
+
+            03 / EXPERIÊNCIA
+
+          </div>
+
+
+          <h3>
+
+            Design que funciona
+
+          </h3>
+
+
+          <p>
+
+            Unimos estética e funcionalidade para criar
+            experiências digitais claras, intuitivas
+            e visualmente marcantes.
+
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         SERVIÇOS
+    ================================================== -->
+
+    <section id="servicos">
+
+
+      <div class="section-header">
+
+
+        <h2 class="section-title">
+
+          Nossas especialidades
+
+        </h2>
+
+
+
+        <p class="section-description">
+
+          Da construção de uma marca ao desenvolvimento
+          de experiências digitais, cada projeto recebe
+          uma abordagem própria.
+
+        </p>
+
+
+      </div>
+
+
+
+      <div class="grid">
+
+
+        <!-- SERVIÇO 01 -->
+
+        <div class="card service-card">
+
+
+          <div>
+
+
+            <div class="service-top">
+
+
+              <div class="service-icon">
+
+                ✦
+
+              </div>
+
+
+              <div class="service-arrow">
+
+                ↗
+
+              </div>
+
+
+            </div>
+
+
+
+            <div class="card-number">
+
+              01
+
+            </div>
+
+
+
+            <h3>
+
+              Identidade Visual
+
+            </h3>
+
+
+
+            <p>
+
+              Logotipos, paletas, tipografia, direção
+              de arte e sistemas visuais para construir
+              marcas consistentes e memoráveis.
+
+            </p>
+
+
+          </div>
+
+
+        </div>
+
+
+
+        <!-- SERVIÇO 02 -->
+
+        <div class="card service-card">
+
+
+          <div>
+
+
+            <div class="service-top">
+
+
+              <div class="service-icon">
+
+                ◇
+
+              </div>
+
+
+              <div class="service-arrow">
+
+                ↗
+
+              </div>
+
+
+            </div>
+
+
+
+            <div class="card-number">
+
+              02
+
+            </div>
+
+
+
+            <h3>
+
+              Design Digital
+
+            </h3>
+
+
+
+            <p>
+
+              Sites, landing pages e interfaces digitais
+              desenvolvidas para unir experiência do
+              usuário, estética e objetivos de negócio.
+
+            </p>
+
+
+          </div>
+
+
+        </div>
+
+
+
+        <!-- SERVIÇO 03 -->
+
+        <div class="card service-card">
+
+
+          <div>
+
+
+            <div class="service-top">
+
+
+              <div class="service-icon">
+
+                □
+
+              </div>
+
+
+              <div class="service-arrow">
+
+                ↗
+
+              </div>
+
+
+            </div>
+
+
+
+            <div class="card-number">
+
+              03
+
+            </div>
+
+
+
+            <h3>
+
+              Comunicação Visual
+
+            </h3>
+
+
+
+            <p>
+
+              Campanhas, peças publicitárias, materiais
+              institucionais e conteúdos visuais pensados
+              para diferentes canais.
+
+            </p>
+
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         MANIFESTO
+    ================================================== -->
+
+    <section id="manifesto">
+
+
+      <div class="showcase">
+
+
+        <div class="showcase-content">
+
+
+          <!-- TEXTO -->
+
+          <div class="showcase-text">
+
+
+            <h2>
+
+              Design não é enfeite.
+              É direção.
+
+            </h2>
+
+
+            <p>
+
+              Acreditamos que uma boa solução visual
+              não precisa gritar para ser percebida.
+
+            </p>
+
+
+            <p>
+
+              Na PRISMA, cada escolha possui uma razão:
+              uma forma, uma cor, uma palavra ou um
+              espaço vazio pode mudar completamente a
+              maneira como uma mensagem é percebida.
+
+            </p>
+
+
+            <p>
+
+              Nosso trabalho acontece entre estratégia,
+              criatividade e cultura visual.
+
+            </p>
+
+
+          </div>
+
+
+
+          <!-- ==================================================
+               LOGO GRANDE
+          ================================================== -->
+
+          <div class="visual-box">
+
+
+            <img
+              src="https://i.postimg.cc/SnskDbxX/T2fly-logo-T2fly-logo-1-removebg-preview.png"
+              alt="Logo PRISMA"
+            >
+
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         CTA
+    ================================================== -->
+
+    <section
+      id="contato"
+      class="final-cta"
+    >
+
+
+      <h2>
+
+        Vamos dar forma à sua ideia?
+
+      </h2>
+
+
+      <p>
+
+        Se você tem uma marca, projeto ou ideia que
+        precisa de uma nova perspectiva, a PRISMA está
+        pronta para transformar conceitos em comunicação.
+
+      </p>
+
+
+      <a
+        href="mailto:contato@prisma.com.br"
+        class="btn btn-primary"
+      >
+
+        Fale com a PRISMA
+
+      </a>
+
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- ==================================================
+       FOOTER
+  ================================================== -->
+
+  <footer>
+
+
+    <div class="footer-container">
+
+
+      <!-- LOGO DO RODAPÉ -->
+
+      <div>
+
+
+        <a
+          href="#"
+          class="brand-logo"
+        >
+
+          <img
+            src="https://i.postimg.cc/SnskDbxX/T2fly-logo-T2fly-logo-1-removebg-preview.png"
+            alt="Logo PRISMA"
+          >
+
+        </a>
+
+
+        <p class="footer-info">
+
+          Design, estratégia e comunicação visual
+          para marcas que querem ser lembradas.
+
+        </p>
+
+
+      </div>
+
+
+
+      <!-- LINKS -->
+
+      <ul class="footer-links">
+
+
+        <li>
+
+          <a href="#sobre">
+
+            Sobre
+
+          </a>
+
+        </li>
+
+
+        <li>
+
+          <a href="#servicos">
+
+            Serviços
+
+          </a>
+
+        </li>
+
+
+        <li>
+
+          <a href="#manifesto">
+
+            Manifesto
+
+          </a>
+
+        </li>
+
+
+        <li>
+
+          <a href="#contato">
+
+            Contato
+
+          </a>
+
+        </li>
+
+
+      </ul>
+
+
+    </div>
+
+
+
+    <!-- COPYRIGHT -->
+
+    <div class="footer-copy">
+
+      © 2026 PRISMA. Todos os direitos reservados.
+
+    </div>
+
+
+  </footer>
+
+
+</body>
+
+</html>
